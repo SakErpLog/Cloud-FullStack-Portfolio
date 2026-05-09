@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Car Rental Services - Professional Website Template">
+    <title>Premium Car Rental Services | Your Company Name</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="main-background"></div>
+    <div class="background-pattern"></div>
+    <canvas id="particleCanvas"></canvas>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-wrapper">
+                <div class="logo-box">
+                    <img src="assets/images/logo.png" alt="Company Logo" class="company-logo">
+                </div>
+                <h1 class="company-name-header" data-en="Premium Car Rentals" data-ar="تأجير السيارات الفاخرة">Premium Car Rentals</h1>
+            </div>
+        </div>
+        <div class="header-right">
+            <button class="lang-toggle" onclick="toggleLanguage()" title="Toggle Language">
+                <span id="langIcon">🌐</span>
+                <span id="langText">العربية</span>
+            </button>
+            <a href="#login" class="login-btn" data-en="Login" data-ar="تسجيل الدخول">Login</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-en="Premium Car Rental Services" data-ar="خدمات تأجير السيارات الفاخرة">Premium Car Rental Services</h1>
+            <p class="hero-subtitle" data-en="Experience luxury and comfort with our fleet" data-ar="استمتع بالفخامة والراحة مع أسطولنا">Experience luxury and comfort with our fleet</p>
+            <p class="hero-description" data-en="Your trusted partner for car rental solutions. Available 24/7 with competitive pricing and exceptional service." data-ar="شريكك الموثوق لحلول تأجير السيارات. متاح 24/7 بأسعار تنافسية وخدمة استثنائية.">Your trusted partner for car rental solutions. Available 24/7 with competitive pricing and exceptional service.</p>
+            
+            <div class="customer-quote">
+                <p class="quote-text" data-en='"Exceptional service and premium vehicles. Highly recommended for business and leisure travel."' data-ar='"خدمة استثنائية وسيارات فاخرة. موصى بها بشدة للسفر للعمل والترفيه."'>"Exceptional service and premium vehicles. Highly recommended for business and leisure travel."</p>
+                <p class="quote-author" data-en="— Customer, City Name" data-ar="— عميل، اسم المدينة">— Customer, City Name</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section class="partnerships">
+        <h2 data-en="Our Trusted Partners" data-ar="شركاؤنا الموثوقون">Our Trusted Partners</h2>
+        <p class="partnerships-subtitle" data-en="Collaborating with industry leaders to serve you better" data-ar="نتعاون مع رواد الصناعة لخدمتك بشكل أفضل">Collaborating with industry leaders to serve you better</p>
+        <div class="partners-grid" id="partnersGrid">
+            <!-- Partners loaded dynamically from CSV -->
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 data-en="Why Choose Us?" data-ar="لماذا تختارنا؟">Why Choose Us?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🚘</div>
+                <h3 data-en="Wide Selection" data-ar="تشكيلة واسعة">Wide Selection</h3>
+                <p data-en="From economy to luxury vehicles, find the perfect car for your needs." data-ar="من السيارات الاقتصادية إلى الفاخرة، ابحث عن السيارة المثالية.">From economy to luxury vehicles, find the perfect car for your needs.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 data-en="Instant Booking" data-ar="حجز فوري">Instant Booking</h3>
+                <p data-en="Book your car in minutes with our streamlined booking system." data-ar="احجز سيارتك في دقائق مع نظامنا المبسط.">Book your car in minutes with our streamlined booking system.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3 data-en="Fully Insured" data-ar="مؤمن بالكامل">Fully Insured</h3>
+                <p data-en="All vehicles are comprehensively insured for your peace of mind." data-ar="جميع السيارات مؤمنة بشكل شامل لراحة بالك.">All vehicles are comprehensively insured for your peace of mind.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3 data-en="Best Prices" data-ar="أفضل الأسعار">Best Prices</h3>
+                <p data-en="Competitive rates with transparent pricing. No hidden fees." data-ar="أسعار تنافسية مع تسعير شفاف. لا رسوم خفية.">Competitive rates with transparent pricing. No hidden fees.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌟</div>
+                <h3 data-en="Premium Service" data-ar="خدمة فاخرة">Premium Service</h3>
+                <p data-en="World-class customer service with every rental." data-ar="خدمة عملاء عالمية المستوى مع كل استئجار.">World-class customer service with every rental.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3 data-en="24/7 Support" data-ar="دعم 24/7">24/7 Support</h3>
+                <p data-en="Round-the-clock support ready to assist you anytime." data-ar="دعم على مدار الساعة جاهز لمساعدتك.">Round-the-clock support ready to assist you anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-us-section">
+        <h2 data-en="About Us" data-ar="عننا">About Us</h2>
+        <p class="about-us-subtitle" data-en="We are your partners in motion. Built on transparency, quality, and world-class service." data-ar="نحن شركاؤك في الرحلة. مبني على الشفافية والجودة والخدمة عالمية المستوى.">We are your partners in motion. Built on transparency, quality, and world-class service.</p>
+        <div class="about-us-container">
+            <div class="about-us-card">
+                <div class="about-us-image-container">
+                    <img src="assets/images/about-1.jpg" alt="Modern Showroom" onerror="this.src='https://placehold.co/800x450/2a2a2a/d1d5db?text=Modern+Showroom'">
+                </div>
+                <p class="about-us-quote" data-en="Premium facilities reflecting the quality of our fleet." data-ar="مرافق فاخرة تعكس جودة أسطولنا.">Premium facilities reflecting the quality of our fleet.</p>
+            </div>
+            <div class="about-us-card">
+                <div class="about-us-image-container">
+                    <img src="assets/images/about-2.jpg" alt="Professional Team" onerror="this.src='https://placehold.co/800x450/2a2a2a/d1d5db?text=Professional+Team'">
+                </div>
+                <p class="about-us-quote" data-en="Expert team dedicated to delivering excellence." data-ar="فريق خبير مكرس لتقديم التميز.">Expert team dedicated to delivering excellence.</p>
+            </div>
+            <div class="about-us-card">
+                <div class="about-us-image-container">
+                    <img src="assets/images/about-3.jpg" alt="Service Center" onerror="this.src='https://placehold.co/800x450/2a2a2a/d1d5db?text=Service+Center'">
+                </div>
+                <p class="about-us-quote" data-en="Meticulous maintenance ensuring vehicle perfection." data-ar="صيانة دقيقة تضمن سيارات مثالية.">Meticulous maintenance ensuring vehicle perfection.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2 class="contact-title" data-en="CONTACT US" data-ar="اتصل بنا">CONTACT US</h2>
+        <p class="contact-subtitle" data-en="24/7 Service Available" data-ar="خدمة 24/7 متاحة">24/7 Service Available</p>
+        <div class="contact-icons">
+            <a href="mailto:info@yourcompany.com" class="contact-icon" title="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+            </a>
+            <a href="https://yourcompany.com" class="contact-icon" title="Website">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+            </a>
+            <a href="tel:+1234567890" class="contact-icon" title="Phone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+            </a>
+            <a href="mailto:support@yourcompany.com" class="contact-icon" title="Support">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M16 8v5a3 3 0 006 0v-1a10 10 0 10-3.92 7.94"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Inquiry Form Section -->
+    <section class="support-form-section">
+        <div class="form-container">
+            <div class="tech-grid"></div>
+            
+            <div class="form-title">
+                <h2 data-en="Start Your Journey" data-ar="ابدأ رحلتك">Start Your Journey</h2>
+                <p class="form-subtitle" data-en="Tell us about your requirements" data-ar="أخبرنا عن احتياجاتك">Tell us about your requirements</p>
+            </div>
+            
+            <form class="support-form" id="supportForm">
+                <!-- Honeypot field (hidden from users) -->
+                <input type="text" name="website" id="website" style="display:none !important; position: absolute; left: -9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone" data-en="Phone Number" data-ar="رقم الهاتف">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required autocomplete="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" data-en="Subject" data-ar="الموضوع">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="booking">Booking Inquiry</option>
+                            <option value="pricing">Pricing Question</option>
+                            <option value="rental">Rental Support</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="message" data-en="Message" data-ar="الرسالة">Message</label>
+                    <textarea id="message" name="message" placeholder="Describe your inquiry..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" data-en="Send Inquiry" data-ar="إرسال الطلب">Send Inquiry</button>
+                
+                <div class="loading" id="loading">
+                    <div class="loading-spinner"></div>
+                    <p data-en="Sending your inquiry..." data-ar="جاري إرسال طلبك...">Sending your inquiry...</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p data-en="© 2025 Your Company Name. All rights reserved." data-ar="© 2025 اسم شركتك. جميع الحقوق محفوظة.">© 2025 Your Company Name. All rights reserved.</p>
+        <p style="margin-top: 10px; opacity: 0.9;" data-en="Premium Car Rental Services" data-ar="خدمات تأجير السيارات الفاخرة">Premium Car Rental Services</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
