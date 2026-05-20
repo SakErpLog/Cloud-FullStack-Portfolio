@@ -23,7 +23,7 @@ Performance-driven IT Cloud Engineer and ERP Technical Developer with a proven t
 * **Infrastructure Layer:** Provisioned and hardened a high-performance **Contabo Cloud VPS 10** environment (4 vCPU Cores, 8 GB RAM, 75 GB NVMe + 150 GB SSD data arrays) running Ubuntu 22.04 LTS.
 * **Orchestration & Stack:** Engineered an isolated `python-venv` and utilized `frappe-bench` to source core ERPNext modules directly via version control.
 * **Saudi Localization Compliance:** Integrated the **Lavaloon Git engine** to implement automated cryptographic signing, securely handling live Phase-2 ZATCA Tax E-Invoicing over RESTful interfaces.
-* **Check out the source repository:** [👉 View AFMCO Deployment Repo](https://github.com/SakErpLog/afmco-erpnext-zatca-vps)
+* **Check out the source repository:** [👉 View AFMCO Deployment Repo](https://github.com/SakErpLog/Cloud-FullStack-Portfolio/tree/main/MusasAfmcoltd)
 
 #### 🚗 Etihad Car Rentals — Operations & Integration Hub
 * Built specialized localized asset tracking modules cleanly mapped to core accounting ledgers.
