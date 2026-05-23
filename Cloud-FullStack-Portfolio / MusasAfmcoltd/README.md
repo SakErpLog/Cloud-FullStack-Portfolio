@@ -1,46 +1,109 @@
-# Hi there, I'm Abdul Khader Shaik 👋
-### IT Cloud Engineer & ERP Technical Developer ☁️ | 🚀
+# 🏢 Mussa & AFMCO Ltd — Enterprise Cloud ERP Deployment & ZATCA Integration
 
-Performance-driven IT Cloud Engineer and ERP Technical Developer with a proven track record of designing, deploying, and optimizing large-scale enterprise solutions and cloud infrastructure. Specialized in the Frappe Framework, ERPNext core, full-stack backend engineering, and robust DevOps automation pipelines.
-
----
-
-### 🛠️ Core Technical Stack & Ecosystem
-
-| Layer | Technologies & Tools |
-| :--- | :--- |
-| **Languages** | `Python`, `JavaScript`, `JSON`, `HTML5`, `CSS` |
-| **Cloud Infrastructure** | `Contabo VPS`, `DigitalOcean (IaaS, Droplets)`, `AWS (Practitioner Layer)` |
-| **Frameworks & Systems** | `Frappe Framework`, `ERPNext Core` (Accounting, HRMS, CRM, Payroll, Stock, Assets) |
-| **Databases** | `MariaDB`, `MySQL`, `Relational Database Design` |
-| **Developer Tools / Practices** | `Git`, `GitHub`, `REST APIs (api.py)`, `Server/Client Scripting`, `CI/CD Pipelines` |
+A production-grade, end-to-end cloud rollout of an enterprise Resource Planning system utilizing the **Frappe Framework** and **ERPNext v15**. This deployment features multi-tenant module isolation, custom facility spatial tracking via **Apex Habitat**, and full phase-2 cryptographic e-invoicing localization compliant with the Saudi Arabian Tax and Customs Authority (**ZATCA**) framework.
 
 ---
 
-### 🚀 Highlighted Production Architectures
+## 🖥️ Core Infrastructure Requirements & Environment
 
-#### 🏢 Mussas Abdullah Fahad Al Mutairi Co. (AFMCO Ltd) — Next-Gen Cloud ERP & ZATCA Phase-2
-* **Infrastructure Layer:** Provisioned and hardened a high-performance **Contabo Cloud VPS 10** environment (4 vCPU Cores, 8 GB RAM, 75 GB NVMe + 150 GB SSD data arrays) running Ubuntu 22.04 LTS.
-* **Orchestration & Stack:** Engineered an isolated `python-venv` and utilized `frappe-bench` to source core ERPNext modules directly via version control.
-* **Saudi Localization Compliance:** Integrated the **Lavaloon Git engine** to implement automated cryptographic signing, securely handling live Phase-2 ZATCA Tax E-Invoicing over RESTful interfaces.
-* **Check out the source repository:** [👉 View AFMCO Deployment Repo](https://github.com/SakErpLog/Cloud-FullStack-Portfolio/tree/main/MusasAfmcoltd)
+The architecture is built and hardened on a high-performance cloud virtualization host to guarantee transactional integrity and high concurrency processing:
 
-#### 🚗 Etihad Car Rentals — Operations & Integration Hub
-* Built specialized localized asset tracking modules cleanly mapped to core accounting ledgers.
-* Designed and exposed custom RESTful interfaces via `api.py` to seamlessly process real-time billing logs across a commercial fleet asset rental ecosystem.
-
----
-
-### 📊 GitHub Analytics & Operational Status
-
-<p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=SakErpLog&show_icons=true&theme=radical&hide_border=true" alt="Abdul's GitHub Stats" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SakErpLog&layout=compact&theme=radical&hide_border=true" alt="Top Languages Used" width="48%" />
-</p>
+* **Cloud Hosting Instance:** Contabo VPS Cloud 10
+* **Operating System Platform:** Ubuntu 22.04.5 LTS
+* **Kernel Architecture Tree:** `5.15.0-173-generic` (x86_64 Structure)
+* **Isolated Environment Runtime:** Python 3.10.12 (Standalone `python-venv`)
+* **Database Management Engine:** MariaDB (Optimized internal thread pooling)
+* **Production Deployment Status:** Active and operating cleanly via Server Public IP (`161.97.67.153`)
 
 ---
 
-### 🤝 Connect With Me
-* **📍 Current Location:** Riyadh, Saudi Arabia  
-* **💼 LinkedIn:** [Connect on LinkedIn](https://linkedin.com) *(Paste your actual LinkedIn URL link here)* * **📧 Email:** akhadarrct848@gmail.com  
-* **📞 Phone:** +91 7396816153
+## 🌐 Background Architecture & Data Pipelines
+
+To bridge core operational entry logs with external micro-services, the environment relies on two core daemon arrays:
+1. **Web Request Proxy Routing:** Handled via an optimized **Nginx** reverse proxy to cleanly isolate virtual environments and process concurrent connections without structural collision.
+2. **Asynchronous Background Tasks:** Orchestrated via **Supervisor** daemons driving distinct low-latency **Redis** queues (Short, Long, and Default background workers) to process intense payroll or analytical ledger compilation tasks away from the primary user thread.
+
+---
+
+## 🛠️ Chronological Step-by-Step Production Configuration
+
+The following verified terminal execution sequence traces the host provisioning, dependency resolution, localization injection, and final production state orchestration:
+
+### 1. Host Hardening & Network Buffer Optimization
+```bash
+# Purge fractured runtime directories and clear downstream download caches
+rm -rf /home/abdulafmco/frappe-bench
+rm -rf /home/abdulafmco/.cache/uv
+
+# Extend global network tolerances to safely handle heavy multi-thread repository distributions
+git config --global http.postBuffer 524288000
+git config --global http.maxRequestSize 524288000
+git config --global http.version HTTP/1.1
+
+# Provision critical system process monitors, reverse proxies, and Node runtime engines
+sudo apt update && sudo apt install -y supervisor nginx
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+
+# Activate isolated virtual environment wrapper and initialize the Frappe engine core
+source /home/abdulafmco/env/bin/activate
+bench init frappe-bench --frappe-branch version-15
+cd /home/abdulafmco/frappe-bench
+
+# Fetch core enterprise functional application files
+bench get-app erpnext --branch version-15
+
+# Provision critical system process monitors, reverse proxies, and Node runtime engines
+sudo apt update && sudo apt install -y supervisor nginx
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+
+# Activate isolated virtual environment wrapper and initialize the Frappe engine core
+source /home/abdulafmco/env/bin/activate
+bench init frappe-bench --frappe-branch version-15
+cd /home/abdulafmco/frappe-bench
+
+# Fetch core enterprise functional application files
+bench get-app erpnext --branch version-15
+
+# Sourcing the public open-source Lavaloon KSA tax localization module
+bench get-app https://github.com/lavaloon-eg/ksa_compliance.git --branch version-15
+
+# Link the core business framework tools directly to the active site container database
+bench --site afmco.production.local install-app erpnext
+bench --site afmco.production.local install-app ksa_compliance
+
+# Resolve explicit required app dependencies by pulling the Human Resource Management module
+bench get-app hrms --branch version-15
+bench --site afmco.production.local install-app hrms
+
+# Fetch custom accommodation and facilities spatial logistics tracking framework (Apex Habitat)
+bench get-app https://github.com/iabodysa/apex.git
+
+# NOTE: Applied a setup patch to setup.py line 92 to force insert mandatory lifecycle years fields:
+# From: doc.insert(ignore_permissions=True)
+# To: doc.insert(ignore_permissions=True, ignore_if_duplicate=True, ignore_mandatory=True)
+
+# Complete the setup installation cycle for custom facility trackers
+bench --site afmco.production.local install-app apex_habitat
+
+# Fire structural database migrations to map new custom schemas and fields inside MariaDB
+bench --site afmco.production.local migrate
+
+# Purge manual, duplicate or conflicting symlinks to pass structural Nginx configuration tests
+sudo rm -f /etc/nginx/conf.d/frappe.conf
+sudo apt install -f -y
+sudo ln -sf /home/abdulafmco/env/bin/bench /usr/local/bin/bench
+
+# Generate clean supervisor worker blocks and web mapping templates from the active binaries
+sudo /home/abdulafmco/env/bin/bench setup supervisor
+sudo /home/abdulafmco/env/bin/bench setup nginx
+
+# Link fresh site proxy files and commit the host into production-ready modes
+sudo mkdir -p /etc/nginx/conf.d
+sudo ln -sf /home/abdulafmco/frappe-bench/config/nginx.conf /etc/nginx/conf.d/frappe.conf
+sudo /home/abdulafmco/env/bin/bench setup production abdulafmco
+
+# Open directory access parameters and optimize browser asset bundles
+sudo chmod o+x /home/abdulafmco
+bench --site afmco.production.local clear-cache
+bench build --force
+sudo systemctl restart nginx
